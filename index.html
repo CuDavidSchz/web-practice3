@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript!</title>
+</head>
+<body>
+
+    <h1 id="titulo"> Pozolería </h1>
+
+    <p> Picale al Elite para comer pozole </p>
+
+    <!-- Cambiar tipografía -->
+    <button id="btnTipografia" onclick="cambiarTipografia()">Cambiar Tipografía</button>
+
+    <!-- Pozole -->
+    <img id="imagenPrincipal" src="images/pozole.webp" width="300">
+
+    <!-- Elite -->
+    <img id="btnImagen" src="images/Elite_Menor_H3.webp" width="100" onclick="cambiarImagen()">
+
+    <script>
+        // Tipografía random
+        function cambiarTipografia() 
+        {
+            const fuentes = ["Arial", "Verdana", "Courier New", "Georgia", "Tahoma", "Times New Roman", "Trebuchet MS"];
+            const fuenteRandom = fuentes[Math.floor(Math.random() * fuentes.length)];
+            document.getElementById("titulo").style.fontFamily = fuenteRandom;
+        }
+
+        // Cambiar imágenes
+        let imagenCambiada = false;
+        function cambiarImagen() 
+        {
+            const imagenPrincipal = document.getElementById("imagenPrincipal");
+            if (imagenCambiada) 
+            {
+                imagenPrincipal.src ="images/pozole.webp"; // Original
+            } 
+            else 
+            {
+                imagenPrincipal.src ="images/empty.png"; // Plato vacío
+            }
+            imagenCambiada = !imagenCambiada;
+        }
+    </script>
+
+</body>
+</html>
